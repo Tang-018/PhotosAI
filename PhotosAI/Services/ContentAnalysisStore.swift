@@ -1,0 +1,5 @@
+import Foundation
+final class ContentAnalysisStore { private var records: [String: ContentAnalysisRecord] = [:]; private let url: URL
+    init() { let base = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0].appendingPathComponent("PhotosAI", isDirectory: true); try? FileManager.default.createDirectory(at: base, withIntermediateDirectories: true); url = base.appendingPathComponent("content_analysis_index.json"); if let data = try? Data(contentsOf: url), let list = try? JSONDecoder().decode([ContentAnalysisRecord].self, from: data) { records = Dictionary(uniqueKeysWithValues: list.map { ($0.assetLocalIdentifier, $0) }) } }
+    func record(for id: String) -> ContentAnalysisRecord? { records[id] }; func upsert(_ record: ContentAnalysisRecord) { records[record.assetLocalIdentifier] = record }; func save() throws { let e = JSONEncoder(); e.dateEncodingStrategy = .iso8601; try e.encode(Array(records.values)).write(to: url, options: .atomic) }; func clearAll() throws { records = [:]; try save() }; var all: [String: ContentAnalysisRecord] { records }
+}

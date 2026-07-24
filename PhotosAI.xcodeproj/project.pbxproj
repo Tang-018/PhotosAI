@@ -1,0 +1,112 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000000000000000000001 /* PhotosAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000001 /* PhotosAIApp.swift */; };
+		A10000000000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000002 /* ContentView.swift */; };
+		A10000000000000000000003 /* PhotoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000003 /* PhotoModels.swift */; };
+		A10000000000000000000004 /* PhotoLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000004 /* PhotoLibraryService.swift */; };
+		A10000000000000000000005 /* ReportExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000005 /* ReportExporter.swift */; };
+		A10000000000000000000006 /* PhotoLibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000006 /* PhotoLibraryViewModel.swift */; };
+		A10000000000000000000007 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000007 /* StatisticsView.swift */; };
+		A10000000000000000000008 /* LibraryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000B /* LibraryFilter.swift */; };
+		A10000000000000000000009 /* ThumbnailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000C /* ThumbnailService.swift */; };
+		A1000000000000000000000A /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000D /* SidebarView.swift */; };
+		A1000000000000000000000B /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000E /* PermissionView.swift */; };
+		A1000000000000000000000C /* PhotoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000F /* PhotoGridView.swift */; };
+		A1000000000000000000000D /* PhotoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000010 /* PhotoThumbnailView.swift */; };
+		A1000000000000000000000E /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000011 /* PhotoDetailView.swift */; };
+		A1000000000000000000000F /* OCRRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000012 /* OCRRecord.swift */; };
+		A10000000000000000000010 /* OCRIndexStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000013 /* OCRIndexStore.swift */; };
+		A10000000000000000000011 /* OCRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000014 /* OCRService.swift */; };
+		A10000000000000000000012 /* ContentCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000015 /* ContentCategory.swift */; };
+		A10000000000000000000013 /* ContentAnalysisStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000016 /* ContentAnalysisStore.swift */; };
+		A10000000000000000000014 /* ContentAnalysisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000017 /* ContentAnalysisService.swift */; };
+		A10000000000000000000015 /* ContentClassificationRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000018 /* ContentClassificationRules.swift */; };
+		A10000000000000000000016 /* AnalysisPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000019 /* AnalysisPanel.swift */; };
+		A10000000000000000000017 /* DuplicateRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000020 /* DuplicateRecord.swift */; };
+		A10000000000000000000018 /* DuplicateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000021 /* DuplicateStore.swift */; };
+		A10000000000000000000019 /* FeaturePrintService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000022 /* FeaturePrintService.swift */; };
+		A10000000000000000000020 /* DuplicateAnalysisService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000023 /* DuplicateAnalysisService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A20000000000000000000001 /* PhotosAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAIApp.swift; sourceTree = "<group>"; };
+		A20000000000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A20000000000000000000003 /* PhotoAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAsset.swift; sourceTree = "<group>"; };
+		A20000000000000000000004 /* PhotoLibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryService.swift; sourceTree = "<group>"; };
+		A20000000000000000000005 /* ReportExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportExporter.swift; sourceTree = "<group>"; };
+		A20000000000000000000006 /* PhotoLibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewModel.swift; sourceTree = "<group>"; };
+		A20000000000000000000007 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		A20000000000000000000008 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Resources/Info.plist; sourceTree = "<group>"; };
+		A20000000000000000000009 /* PhotosAI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PhotosAI.entitlements; sourceTree = "<group>"; };
+		A2000000000000000000000A /* PhotosAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = PhotosAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2000000000000000000000B /* LibraryFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryFilter.swift; sourceTree = "<group>"; };
+		A2000000000000000000000C /* ThumbnailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailService.swift; sourceTree = "<group>"; };
+		A2000000000000000000000D /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		A2000000000000000000000E /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
+		A2000000000000000000000F /* PhotoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridView.swift; sourceTree = "<group>"; };
+		A20000000000000000000010 /* PhotoThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoThumbnailView.swift; sourceTree = "<group>"; };
+		A20000000000000000000011 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
+		A20000000000000000000012 /* OCRRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRRecord.swift; sourceTree = "<group>"; };
+		A20000000000000000000013 /* OCRIndexStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRIndexStore.swift; sourceTree = "<group>"; };
+		A20000000000000000000014 /* OCRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCRService.swift; sourceTree = "<group>"; };
+		A20000000000000000000015 /* ContentCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCategory.swift; sourceTree = "<group>"; };
+		A20000000000000000000016 /* ContentAnalysisStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentAnalysisStore.swift; sourceTree = "<group>"; };
+		A20000000000000000000017 /* ContentAnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentAnalysisService.swift; sourceTree = "<group>"; };
+		A20000000000000000000018 /* ContentClassificationRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentClassificationRules.swift; sourceTree = "<group>"; };
+		A20000000000000000000019 /* AnalysisPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisPanel.swift; sourceTree = "<group>"; };
+		A20000000000000000000020 /* DuplicateRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateRecord.swift; sourceTree = "<group>"; };
+		A20000000000000000000021 /* DuplicateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateStore.swift; sourceTree = "<group>"; };
+		A20000000000000000000022 /* FeaturePrintService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturePrintService.swift; sourceTree = "<group>"; };
+		A20000000000000000000023 /* DuplicateAnalysisService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuplicateAnalysisService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A30000000000000000000001 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A40000000000000000000001 = {isa = PBXGroup; children = (A40000000000000000000002 /* PhotosAI */, A40000000000000000000007 /* Products */); sourceTree = "<group>"; };
+		A40000000000000000000002 /* PhotosAI */ = {isa = PBXGroup; children = (A20000000000000000000001, A20000000000000000000002, A40000000000000000000003 /* Models */, A40000000000000000000004 /* Services */, A40000000000000000000005 /* ViewModels */, A40000000000000000000006 /* Views */, A20000000000000000000008, A20000000000000000000009); path = PhotosAI; sourceTree = "<group>"; };
+		A40000000000000000000003 /* Models */ = {isa = PBXGroup; children = (A20000000000000000000003, A2000000000000000000000B, A20000000000000000000012, A20000000000000000000015, A20000000000000000000020); path = Models; sourceTree = "<group>"; };
+		A40000000000000000000004 /* Services */ = {isa = PBXGroup; children = (A20000000000000000000004, A20000000000000000000005, A2000000000000000000000C, A20000000000000000000013, A20000000000000000000014, A20000000000000000000016, A20000000000000000000017, A20000000000000000000018, A20000000000000000000021, A20000000000000000000022, A20000000000000000000023); path = Services; sourceTree = "<group>"; };
+		A40000000000000000000005 /* ViewModels */ = {isa = PBXGroup; children = (A20000000000000000000006,); path = ViewModels; sourceTree = "<group>"; };
+		A40000000000000000000006 /* Views */ = {isa = PBXGroup; children = (A20000000000000000000007, A2000000000000000000000D, A2000000000000000000000E, A2000000000000000000000F, A20000000000000000000010, A20000000000000000000011, A20000000000000000000019); path = Views; sourceTree = "<group>"; };
+		A40000000000000000000007 /* Products */ = {isa = PBXGroup; children = (A2000000000000000000000A,); name = Products; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A50000000000000000000001 /* PhotosAI */ = {isa = PBXNativeTarget; buildConfigurationList = A60000000000000000000002; buildPhases = (A30000000000000000000001, A70000000000000000000001, A80000000000000000000001); buildRules = (); dependencies = (); name = PhotosAI; productName = PhotosAI; productReference = A2000000000000000000000A; productType = "com.apple.product-type.application"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A90000000000000000000001 /* Project object */ = {isa = PBXProject; attributes = { LastUpgradeCheck = 1600; TargetAttributes = { A50000000000000000000001 = { CreatedOnToolsVersion = 16.0; }; }; }; buildConfigurationList = A60000000000000000000001; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (en, Base, "zh-Hans"); mainGroup = A40000000000000000000001; productRefGroup = A40000000000000000000007; projectDirPath = ""; projectRoot = ""; targets = (A50000000000000000000001,); };
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A80000000000000000000001 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A70000000000000000000001 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A10000000000000000000001, A10000000000000000000002, A10000000000000000000003, A10000000000000000000004, A10000000000000000000005, A10000000000000000000006, A10000000000000000000007, A10000000000000000000008, A10000000000000000000009, A1000000000000000000000A, A1000000000000000000000B, A1000000000000000000000C, A1000000000000000000000D, A1000000000000000000000E, A1000000000000000000000F, A10000000000000000000010, A10000000000000000000011, A10000000000000000000012, A10000000000000000000013, A10000000000000000000014, A10000000000000000000015, A10000000000000000000016, A10000000000000000000017, A10000000000000000000018, A10000000000000000000019, A10000000000000000000020,); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A60000000000000000000003 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = { CLANG_ENABLE_MODULES = YES; CODE_SIGN_STYLE = Automatic; MACOSX_DEPLOYMENT_TARGET = 13.0; SDKROOT = macosx; }; name = Debug; };
+		A60000000000000000000004 /* Release */ = {isa = XCBuildConfiguration; buildSettings = { CLANG_ENABLE_MODULES = YES; CODE_SIGN_STYLE = Automatic; MACOSX_DEPLOYMENT_TARGET = 13.0; SDKROOT = macosx; }; name = Release; };
+		A60000000000000000000005 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = { CODE_SIGN_ENTITLEMENTS = PhotosAI/PhotosAI.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = PhotosAI/Resources/Info.plist; MACOSX_DEPLOYMENT_TARGET = 13.0; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.example.PhotosAI; PRODUCT_NAME = PhotosAI; SWIFT_VERSION = 5.0; }; name = Debug; };
+		A60000000000000000000006 /* Release */ = {isa = XCBuildConfiguration; buildSettings = { CODE_SIGN_ENTITLEMENTS = PhotosAI/PhotosAI.entitlements; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = PhotosAI/Resources/Info.plist; MACOSX_DEPLOYMENT_TARGET = 13.0; MARKETING_VERSION = 1.0; PRODUCT_BUNDLE_IDENTIFIER = com.example.PhotosAI; PRODUCT_NAME = PhotosAI; SWIFT_VERSION = 5.0; }; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A60000000000000000000001 = {isa = XCConfigurationList; buildConfigurations = (A60000000000000000000003, A60000000000000000000004,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		A60000000000000000000002 = {isa = XCConfigurationList; buildConfigurations = (A60000000000000000000005, A60000000000000000000006,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = A90000000000000000000001 /* Project object */;
+}
