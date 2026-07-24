@@ -1,63 +1,89 @@
-# PhotosAI（V2，只读）
+# PhotosAI
 
-一个原生 macOS SwiftUI App，通过 PhotoKit 只读扫描当前 Photos Library，并导出本地 JSON 与 Markdown 报告。
+> AI 驱动的 macOS 智能照片管理助手
 
-## V2 新增：缩略图浏览与筛选
+![macOS](https://img.shields.io/badge/macOS-13%2B-000000?logo=apple&logoColor=white)
+![Swift](https://img.shields.io/badge/Swift-5-orange?logo=swift&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue)
 
-- `NavigationSplitView` 侧边栏：全部照片、截图、视频、Live Photos、收藏、最近项目。
-- 自适应 `LazyVGrid`：按需加载约 140 × 140 的裁剪缩略图；滑块可调节大小。
-- `PHCachingImageManager` + 内存缓存：只请求显示尺寸的缩略图，离开可见区域会取消请求，不加载原始大图。
-- 搜索支持年份/月（如 `2025`、`2025-07`）及“截图、视频、Live Photo、收藏”。
-- 点击缩略图打开只读详情页，显示预览、时间、分辨率、时长和 PhotoKit localIdentifier。
+PhotosAI 是一款坚持**本地优先、只读分析**的 macOS 照片管理助手：读取 Photos 图库的公开元数据与缩略图，在本机完成 OCR、内容理解和重复照片分析，绝不修改系统照片库。📷
 
-## 安全边界
+## ✨ 功能
 
-- 不使用 AppleScript，不读取 `Photos Library.photoslibrary` 的内部数据库或文件。
-- `PhotoLibraryService` 只调用 `PHAsset.fetchAssets` 和只读属性。
-- 项目中没有 `PHPhotoLibrary.performChanges`、`PHAssetChangeRequest` 或 `PHAssetCollectionChangeRequest`，因此不能删除、编辑、移动照片或创建相簿。
-- 导出时由你在系统文件选择器中指定目录，输出 `photo_analysis.json` 与 `photo_analysis.md`。
+| 功能 | 说明 | 状态 |
+|---|---|---|
+| PhotoKit 扫描 | 读取照片、视频、截图、Live Photo、收藏及基础元数据 | ✅ 已完成 |
+| 缩略图浏览 | 自适应网格、媒体筛选、详情查看与本地缓存 | ✅ 已完成 |
+| OCR | 基于 Apple Vision 的本地中英文文字识别与索引 | ✅ 已完成 |
+| 智能分类 | 融合 Vision、OCR 与元数据生成本地分类及标签 | ✅ 已完成 |
+| 重复照片检测 | 基于 Vision FeaturePrint 的重复/相似照片索引 | 🚧 开发中 |
+| 搜索 | 日期、媒体类型、OCR 文本与本地分类组合搜索 | ✅ 已完成 |
+| JSON 导出 | 导出照片扫描与本地分析结果 | ✅ 已完成 |
+| Markdown 导出 | 导出可阅读的照片与 OCR 分析报告 | ✅ 已完成 |
 
-## 用 Xcode 打开
+> 🔒 所有分析在本机完成；不会上传照片、OCR 文本或分析结果，也不会创建、修改、移动或删除 Photos 中的任何项目。
 
-1. 在 Finder 双击 `PhotosAI.xcodeproj`，或在终端运行：
+## 🖼️ 项目截图
 
-   ```bash
-   open /Users/tangziqing/Documents/Codex/2026-07-23/ban/outputs/PhotosAIApp/PhotosAI.xcodeproj
-   ```
+<!-- 将截图放入 docs/images/ 后，可在此处替换为：![PhotosAI 主界面](docs/images/main-window.png) -->
 
-2. 选择 **PhotosAI** target，打开 **Signing & Capabilities**。
-3. 在 **Signing** 中选择你的 Apple Development Team，并确保 Bundle Identifier 唯一（例如 `com.你的名字.PhotosAI`）。原因：签名后的 App 才能获得 macOS 隐私权限。
-4. 保持 **App Sandbox** 开启，并确认以下能力：
-   - **Photos Library**：用于 PhotoKit 读取图库；
-   - **User Selected File / Read/Write**：用于把报告写到你在导出面板选择的文件夹。
-5. 选择 `My Mac`，按 **⌘R** 运行。
+_截图即将补充。_
 
-## 首次授权与使用
+## 🧰 技术栈
 
-1. 在 App 中点击“授权访问照片”，系统请求照片访问时选择“允许完全访问”。PhotoKit 将整库读取权限称为 `.readWrite`；PhotosAI 的代码仍严格只读。
-2. 点击“扫描照片库”。界面显示扫描进度、统计数据和最近 100 项元数据。
-3. 点击“导出分析报告”，在弹出的目录选择器中选一个文件夹。
-4. 检查该文件夹中的 `photo_analysis.json` 与 `photo_analysis.md`。
+- **SwiftUI**：原生 macOS 界面
+- **PhotoKit**：只读访问 Photos 图库
+- **Vision**：OCR、图像分类与 FeaturePrint
+- **CoreImage**：图像处理能力基础
+- **MVVM**：清晰分离界面、状态与服务层
+- **Swift Concurrency / Combine**：后台任务与响应式状态更新
 
-如果以前拒绝过：在“系统设置”→“隐私与安全性”→“照片”中，允许 PhotosAI 访问，再回到 App 点击扫描。
-
-## 如何验证只读
-
-1. 在 Xcode 全局搜索 `PHAssetChangeRequest`、`PHAssetCollectionChangeRequest` 和 `performChanges(`：V1 不含这些 Photos 写入 API 调用。
-2. 扫描前后在 Photos 中比较照片数量和相簿列表：应用仅读取元数据，不会生成任何新相簿。
-3. 检查导出目录：应用只会新建两个报告文件，不会向 Photos Library 写入文件。
-
-## 项目结构
+## 🗂️ 项目结构
 
 ```text
 PhotosAIApp/
 ├── PhotosAI.xcodeproj
 ├── PhotosAI/
-│   ├── Models/             # Codable 元数据模型
-│   ├── Services/           # PhotoKit 只读扫描与报告导出
-│   ├── ViewModels/         # MVVM 状态与用户操作
-│   ├── Views/              # SwiftUI 统计视图
-│   ├── Resources/Info.plist
+│   ├── Models/          # 照片、OCR、内容分析、重复检测模型
+│   ├── Services/        # PhotoKit、Vision、索引与导出服务
+│   ├── ViewModels/      # PhotoLibraryViewModel
+│   ├── Views/           # SwiftUI 页面、网格、详情与分析面板
+│   ├── Resources/       # Info.plist
 │   └── PhotosAI.entitlements
 └── README.md
 ```
+
+## 🚀 安装与运行
+
+### 环境要求
+
+- macOS 13 Ventura 或更高版本
+- Xcode 16.2 或更高版本
+- Apple ID（用于本机签名）
+
+### 运行步骤
+
+1. 克隆或下载本仓库。
+2. 使用 Xcode 打开 `PhotosAI.xcodeproj`。
+3. 选择 **PhotosAI** target，在 **Signing & Capabilities** 中选择你的 Development Team。
+4. 保持 App Sandbox、Photos Library 与 User Selected File Read/Write 能力开启。
+5. 选择 `My Mac`，按 <kbd>⌘</kbd> + <kbd>R</kbd> 运行。
+6. 首次启动时，在系统提示中允许 PhotosAI 访问照片。
+7. 点击“扫描照片库”，开始本地只读分析。
+
+> 如曾拒绝权限，请在“系统设置 → 隐私与安全性 → 照片”中重新允许 PhotosAI 访问图库。
+
+## 🗺️ Roadmap
+
+- [x] PhotoKit 图库扫描
+- [x] 本地 OCR 与 OCR 索引
+- [x] 本地内容分类
+- [ ] OpenAI Vision
+- [ ] AI 自动标签
+- [ ] AI 搜索
+- [ ] 自动整理相册
+- [ ] 智能回忆
+
+## 📄 License
+
+本项目采用 [MIT License](LICENSE)。
